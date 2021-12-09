@@ -1,6 +1,25 @@
 import { createContext, ReactElement } from "react";
 
-export const RestaurantsContext = createContext({});
+const restaurants = [
+    {
+        name: "McDonald",
+        rating: 5,
+        description: "Yeeey!"
+    },
+    {
+        name: "Burger King",
+        rating: 5,
+        description: "Yeeey!"
+    },
+];
+
+interface Restaurants {
+    name: String;
+    rating: Number;
+    description: String;
+}
+
+export const RestaurantsContext = createContext<Restaurants[]>([]);
 
 interface Props {
     children: ReactElement;
@@ -8,7 +27,7 @@ interface Props {
 
 const RestaurantsProvider: React.FC<Props> = ({children}) => {
     return (
-    <RestaurantsContext.Provider value="Hello from context">
+    <RestaurantsContext.Provider value={restaurants}>
         {children}
     </RestaurantsContext.Provider>
     )
