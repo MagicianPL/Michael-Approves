@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import RestaurantItem from './RestaurantItem';
 import styled from 'styled-components';
+import { RestaurantsContext } from '../contexts/RestaurantsContext';
 
 const StyledRestaurantsGrid = styled.div`
     width: 100%;
@@ -12,12 +13,15 @@ const StyledRestaurantsGrid = styled.div`
 `;
 
 const RestaurantsGrid = () => {
+    const restaurants: {name: String; rating: Number; description: String}[] = useContext(RestaurantsContext);
+
     return (
         <StyledRestaurantsGrid>
-            <RestaurantItem />
-            <RestaurantItem />
-            <RestaurantItem />
-            <RestaurantItem />
+           {restaurants.map(obj => {
+               return (
+                   <RestaurantItem />
+               )
+           })}
         </StyledRestaurantsGrid>
     )
 };

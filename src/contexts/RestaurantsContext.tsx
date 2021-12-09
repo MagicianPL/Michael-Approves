@@ -1,6 +1,6 @@
-import { createContext, ReactElement } from "react";
+import { createContext, useState, ReactElement } from "react";
 
-const restaurants = [
+const restaurantsArr = [
     {
         name: "McDonald",
         rating: 5,
@@ -13,21 +13,17 @@ const restaurants = [
     },
 ];
 
-interface Restaurants {
-    name: String;
-    rating: Number;
-    description: String;
-}
-
-export const RestaurantsContext = createContext<Restaurants[]>([]);
+export const RestaurantsContext = createContext<any>(null);
 
 interface Props {
     children: ReactElement;
 }
 
 const RestaurantsProvider: React.FC<Props> = ({children}) => {
+    const [restaurants, setRestaurants] = useState(restaurantsArr)
+
     return (
-    <RestaurantsContext.Provider value={restaurants}>
+    <RestaurantsContext.Provider value={[restaurants, setRestaurants]}>
         {children}
     </RestaurantsContext.Provider>
     )
