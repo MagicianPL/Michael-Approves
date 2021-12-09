@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { RestaurantsContext } from '../contexts/RestaurantsContext';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -10,6 +11,8 @@ const Wrapper = styled.div`
 `;
 
 const RestaurantItem = () => {
+    const value = useContext(RestaurantsContext);
+    console.log(value);
     return (
         <Wrapper />
     )
