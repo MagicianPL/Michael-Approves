@@ -13,7 +13,7 @@ const restaurantsArr = [
     },
 ];
 
-export const RestaurantsContext = createContext<any>(null);
+export const RestaurantsContext = createContext<any>([]);
 
 interface Props {
     children: ReactElement;

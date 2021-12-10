@@ -9,7 +9,6 @@ const StyledRestaurantsGrid = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     justify-items: center;
-    background: gray;
 `;
 
 const RestaurantsGrid = () => {
