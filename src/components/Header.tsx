@@ -7,28 +7,34 @@ const StyledHeader = styled.header`
     height: 150px;
     display: flex;
     align-items: center;
-    padding: 10px 50px;
+    padding: 10px 30px;
     position: relative;
-    color: #342E3A;
     font-weight: bold;
 
-    .logo {
-        width: 120px;
-        height: 120px;
-        background: yellow;
-        border-radius: 50%;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 65%;
+        height: 1px;
+        background: ${({theme}) => theme.colors.primary};
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.2;
+        border-radius: 5px;
     }
 
     p {
-        flex: 1;
-        text-align: center;
-        font-size: 35px;
+        color: ${({theme}) => theme.colors.primary};
+        font-weight: bold;
+        font-size: 40px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         
     }
+    
 `;
 
 const Header = () => {

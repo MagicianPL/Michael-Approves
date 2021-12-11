@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rasa:ital,wght@0,400;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,7 @@
 
 body {
   min-height: 100vh;
-  /*background: rgb(207,204,123);
-background: linear-gradient(42deg, rgba(207,204,123,1) 10%, rgba(151,149,90,1) 100%);*/
+  background: rgb(207,204,123);
+  background: linear-gradient(189deg, rgba(207,204,123,1) 0%, rgba(255,255,255,1) 86%);
+  font-family: Rasa;
 }
