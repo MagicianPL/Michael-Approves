@@ -4,11 +4,12 @@ import styled from 'styled-components';
 const StyledHeader = styled.header`
     width: 100%;
     height: 150px;
-    background: black;
     display: flex;
     align-items: center;
     padding: 10px 50px;
     position: relative;
+    color: #342E3A;
+    font-weight: bold;
 
     .logo {
         width: 120px;
@@ -18,7 +19,6 @@ const StyledHeader = styled.header`
     }
 
     p {
-        color: white;
         flex: 1;
         text-align: center;
         font-size: 35px;
