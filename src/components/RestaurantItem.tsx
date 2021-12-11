@@ -1,33 +1,54 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+// @ts-ignore
+import CircleType from "circletype";
 import { RestaurantsContext } from '../contexts/RestaurantsContext';
 
 const Wrapper = styled.div`
     width: 100%;
-    max-width: 300px;
+    max-width: 310px;
     aspect-ratio: 1 / 1;
-    background: #342E3A;
-    border-radius: 50%;
-    border: 3px solid #B6A251;
-   transition: all 0.5s;
-    cursor: pointer;
+    border: 1px solid red;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: white;
+    align-items: center;
 
-    &:hover {
-        border: 3px solid #251D1F;
-        background: #B6A251;
-        color: #251D1F;
+    h1 {
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .circle {
+        width: 100%;
+        max-width: 300px;
+        aspect-ratio: 1 / 1;
+        border: 3px solid black;
+        border-radius: 50%;
+        position: relative;
+        bottom: 21px;
     }
 `;
 
 const RestaurantItem = () => {
     const value = useContext(RestaurantsContext);
     console.log(value);
+
+    const curvedText = useRef(null);
+
+    useEffect(()=>{
+        console.log(curvedText.current)
+        const circleType = new CircleType(curvedText.current);
+circleType.radius(250).dir(1);
+        
+    }, [])
+
     return (
-        <Wrapper><h1>McDonald</h1></Wrapper>
+        <Wrapper>
+            <h1 ref={curvedText}>Angel's Wings</h1>
+            <div className="circle"></div>
+        </Wrapper>
     )
 };
 
