@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
+// @ts-ignore
+import CircleType from "circletype";
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -24,24 +26,30 @@ const StyledHeader = styled.header`
         border-radius: 5px;
     }
 
-    p {
+    .desc {
         color: ${({theme}) => theme.colors.primary};
         font-weight: bold;
         font-size: 40px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        
+        transform: translate(-50%, -50%); 
     }
     
 `;
 
 const Header = () => {
+
+    useEffect(()=>{
+        const circleType = new CircleType(document.querySelector('.curved'));
+circleType.radius(200).dir(-1);
+    }, [])
+
     return (
         <StyledHeader>
             <Logo />
-            <p>Only approved restaurants!</p>
+            <p className="desc">Only approved restaurants!</p>
+            <p className="curved">Angel's Wings</p>
         </StyledHeader>
     );
 };
