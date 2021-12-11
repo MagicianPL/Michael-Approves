@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Logo from './Logo';
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -33,7 +34,7 @@ const StyledHeader = styled.header`
 const Header = () => {
     return (
         <StyledHeader>
-            <div className="logo"></div>
+            <Logo />
             <p>Only approved restaurants!</p>
         </StyledHeader>
     );
