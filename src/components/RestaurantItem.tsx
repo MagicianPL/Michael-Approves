@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import styled from 'styled-components';
-// @ts-ignore
-import CircleType from "circletype";
+import { useCurvedText } from '../helpers/useCurvedText';
 import { RestaurantsContext } from '../contexts/RestaurantsContext';
 
 const Wrapper = styled.div`
@@ -37,12 +36,7 @@ const RestaurantItem = () => {
 
     const curvedText = useRef(null);
 
-    useEffect(()=>{
-        console.log(curvedText.current)
-        const circleType = new CircleType(curvedText.current);
-circleType.radius(250).dir(1);
-        
-    }, [])
+    useCurvedText(curvedText);
 
     return (
         <Wrapper>
