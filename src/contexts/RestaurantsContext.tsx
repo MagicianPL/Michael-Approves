@@ -1,17 +1,6 @@
+import React from 'react';
 import { createContext, useState, ReactElement } from "react";
-
-const restaurantsArr = [
-    {
-        name: "McDonald",
-        rating: 5,
-        description: "Yeeey!"
-    },
-    {
-        name: "Burger King",
-        rating: 5,
-        description: "Yeeey!"
-    },
-];
+import { useFetchData } from '../helpers/useFetchData';
 
 export const RestaurantsContext = createContext<any>([]);
 
@@ -20,7 +9,10 @@ interface Props {
 }
 
 const RestaurantsProvider: React.FC<Props> = ({children}) => {
-    const [restaurants, setRestaurants] = useState(restaurantsArr)
+    const apiUrl = "https://michael-approves-api.herokuapp.com/api/v1/restaurants";
+    const [restaurants, setRestaurants] = useState([]);
+
+    useFetchData(apiUrl, setRestaurants);
 
     return (
     <RestaurantsContext.Provider value={[restaurants, setRestaurants]}>
