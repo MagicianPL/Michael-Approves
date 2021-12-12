@@ -16,7 +16,7 @@ const Wrapper = styled.div<Props>`
     margin-bottom: 25px;
 
     h1 {
-        letter-spacing: 3px;
+        letter-spacing: 6px;
         font-weight: bold;
         font-size: 40px;
         height: 70px;
@@ -24,9 +24,9 @@ const Wrapper = styled.div<Props>`
 
     .circle {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
         aspect-ratio: 1 / 1;
-        border: 3px solid black;
+        border: 6px solid ${({theme}) => theme.colors.tertiary};
         border-radius: 50%;
         position: relative;
         bottom: 21px;
