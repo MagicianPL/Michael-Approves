@@ -1,7 +1,6 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useCurvedText } from '../helpers/useCurvedText';
-import { RestaurantsContext } from '../contexts/RestaurantsContext';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -30,10 +29,8 @@ const Wrapper = styled.div`
     }
 `;
 
-const RestaurantItem = () => {
-    const value = useContext(RestaurantsContext);
-    console.log(value);
-
+const RestaurantItem: React.FC<any> = ({data}) => {
+    console.log(data);
     const curvedText = useRef(null);
 
     useCurvedText(curvedText);

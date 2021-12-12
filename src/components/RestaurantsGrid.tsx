@@ -12,13 +12,14 @@ const StyledRestaurantsGrid = styled.div`
 `;
 
 const RestaurantsGrid = () => {
-    const restaurants: {name: String; rating: Number; description: String}[] = useContext(RestaurantsContext);
 
+    const restaurants: any = useContext(RestaurantsContext);
+    console.log(restaurants);
     return (
         <StyledRestaurantsGrid>
-           {restaurants.map(obj => {
+           {restaurants.map((obj: any) => {
                return (
-                   <RestaurantItem />
+                   <RestaurantItem data={obj} key={obj._id} />
                )
            })}
         </StyledRestaurantsGrid>

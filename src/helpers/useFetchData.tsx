@@ -5,7 +5,6 @@ export const useFetchData = (url: string, setState: (data: any)=>void) => {
         fetch(url)
         .then(res => res.json())
         .then(data => {
-        console.log(data);
         setState(data);
     });
     }, [url, setState])

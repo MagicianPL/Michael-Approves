@@ -13,9 +13,8 @@ const RestaurantsProvider: React.FC<Props> = ({children}) => {
     const [restaurants, setRestaurants] = useState([]);
 
     useFetchData(apiUrl, setRestaurants);
-
     return (
-    <RestaurantsContext.Provider value={[restaurants, setRestaurants]}>
+    <RestaurantsContext.Provider value={restaurants}>
         {children}
     </RestaurantsContext.Provider>
     )
