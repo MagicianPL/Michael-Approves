@@ -31,6 +31,15 @@ const Wrapper = styled.div<Props>`
         position: relative;
         bottom: 21px;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: ${({theme}) => theme.colors.primary};
+        transition: border 0.4s;
+
+        &:hover {
+            border: 6px solid ${({theme}) => theme.colors.primary};
+        }
 
         &::before {
             content: "";
@@ -42,10 +51,21 @@ const Wrapper = styled.div<Props>`
             background-position: center;
             opacity: 0.6;
             transition: all 0.4s;
+            z-index: -1;
         }
 
         &:hover::before {
             opacity: 0.3;
+        }
+
+        &:hover p {
+            opacity: 1;
+        }
+
+        p {
+            font-size: 50px;
+            opacity: 0;
+            transition: all 1s;
         }
     }
 `;
@@ -58,7 +78,9 @@ const RestaurantItem: React.FC<any> = ({data}) => {
     return (
         <Wrapper bg={data.bgImage}>
             <h1 ref={curvedText}>{data.name}</h1>
-            <div className="circle"></div>
+            <div className="circle">
+                <p>{data.type}</p>
+            </div>
         </Wrapper>
     )
 };
