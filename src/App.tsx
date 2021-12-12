@@ -6,6 +6,8 @@ import Header from './components/Header';
 import StyledMainWrapper from './components/StyledMainWrapper';
 import RestaurantsGrid from './components/RestaurantsGrid';
 import RestaurantsProvider from './contexts/RestaurantsContext';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import RestaurantDetails from './components/RestaurantDetails';
 
 function App() {
   return (
@@ -14,7 +16,12 @@ function App() {
       <Header />
       <RestaurantsProvider>
       <StyledMainWrapper>
-      <RestaurantsGrid />
+    <Router>
+    <Routes>
+      <Route path="/" element={<RestaurantsGrid />} />
+      <Route path="/:id" element={<RestaurantDetails />}/>
+    </Routes>
+    </Router>
       </StyledMainWrapper>
       </RestaurantsProvider>
       </ThemeProvider>
