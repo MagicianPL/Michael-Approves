@@ -20,6 +20,7 @@ const Wrapper = styled.div<Props>`
         font-weight: bold;
         font-size: 40px;
         height: 70px;
+        color: ${({theme}) => theme.colors.primary};
     }
 
     .circle {
