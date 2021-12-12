@@ -1,8 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Logo from './Logo';
-// @ts-ignore
-import CircleType from "circletype";
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -39,17 +37,10 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-
-    useEffect(()=>{
-        const circleType = new CircleType(document.querySelector('.curved'));
-circleType.radius(200).dir(-1);
-    }, [])
-
     return (
         <StyledHeader>
             <Logo />
             <p className="desc">Only approved restaurants!</p>
-            <p className="curved">Angel's Wings</p>
         </StyledHeader>
     );
 };
