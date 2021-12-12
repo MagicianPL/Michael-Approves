@@ -24,10 +24,17 @@ const Wrapper = styled.section`
     }
 `;
 
-const SearchBar = () => {
+interface Props {
+    value: string,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+};
+
+const SearchBar: React.FC<Props> = ({value, onChange}) => {
+    console.log(value);
+    
     return(
         <Wrapper>
-            <input type="text" placeholder='Search by name' />
+            <input value={value} onChange={onChange} type="text" placeholder='Search by name' />
         </Wrapper>
     );
 };

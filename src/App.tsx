@@ -6,7 +6,6 @@ import Header from './components/Header';
 import StyledMainWrapper from './components/StyledMainWrapper';
 import RestaurantsGrid from './components/RestaurantsGrid';
 import RestaurantsProvider from './contexts/RestaurantsContext';
-import SearchBar from './components/SearchBar';
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
       <Header />
       <RestaurantsProvider>
       <StyledMainWrapper>
-      <SearchBar />
       <RestaurantsGrid />
       </StyledMainWrapper>
       </RestaurantsProvider>
