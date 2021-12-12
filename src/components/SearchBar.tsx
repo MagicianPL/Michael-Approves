@@ -30,8 +30,7 @@ interface Props {
 };
 
 const SearchBar: React.FC<Props> = ({value, onChange}) => {
-    console.log(value);
-    
+
     return(
         <Wrapper>
             <input value={value} onChange={onChange} type="text" placeholder='Search by name' />
