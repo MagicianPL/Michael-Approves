@@ -12,6 +12,15 @@ const Wrapper = styled.section`
     input {
         width: 100%;
         max-width: 400px;
+        font-size: 30px;
+        padding: 10px 6px;
+        border: 2px solid ${({theme}) => theme.colors.tertiary};
+        border-radius: 4px;
+        color: ${({theme}) => theme.colors.primary};
+
+        &:focus {
+            border: 2px solid ${({theme}) => theme.colors.primary};
+        }
     }
 `;
 
