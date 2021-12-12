@@ -10,6 +10,30 @@ const StyledRestaurantsGrid = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     justify-items: center;
+
+    .loading {
+        max-width: 100%;
+        text-align: center;
+        font-size: 45px;
+        grid-column: 1/-1;
+        animation: loading 4s infinite;
+        overflow: hidden;
+        color: ${({theme}) => theme.colors.primary};
+    }
+
+    @keyframes loading {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.3)
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
 `;
 
 const RestaurantsGrid = () => {
@@ -43,11 +67,13 @@ const RestaurantsGrid = () => {
         <>
        <SearchBar value={searchedValue} onChange={handleInputChange} />
         <StyledRestaurantsGrid>
-           {filteredRestaurants.map((obj: any) => {
+           { restaurants.length > 0 ?
+           filteredRestaurants.map((obj: any) => {
                return (
                    <RestaurantItem data={obj} key={obj._id} />
                )
-           })}
+           })
+        : <p className="loading">Please wait...</p>}
         </StyledRestaurantsGrid>
         </>
     )
