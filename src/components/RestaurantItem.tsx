@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useCurvedText } from '../helpers/useCurvedText';
+import { Link } from 'react-router-dom';
 
 interface Props {
     bg: string,
@@ -71,6 +72,11 @@ const Wrapper = styled.div<Props>`
     }
 `;
 
+const StyledLink = styled(Link)`
+    width: 100%;
+    text-decoration: none;
+`;
+
 const RestaurantItem: React.FC<any> = ({data}) => {
     const curvedText = useRef(null);
 
@@ -79,9 +85,11 @@ const RestaurantItem: React.FC<any> = ({data}) => {
     return (
         <Wrapper bg={data.bgImage}>
             <h1 ref={curvedText}>{data.name}</h1>
+            <StyledLink to={`/${data._id}`}>
             <div className="circle">
                 <p>{data.type}</p>
             </div>
+            </StyledLink>
         </Wrapper>
     )
 };
