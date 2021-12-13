@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { RestaurantsContext } from '../contexts/RestaurantsContext';
 import star from '../assets/star.png';
+import StyledButton from './StyledButton';
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -49,11 +50,16 @@ const RestaurantDetails: React.FC<any> = (props) => {
 
    return (
        <>
-        {restaurant ? 
-        <StyledHeader>
+        {restaurant ?
+            <>
+            <StyledHeader>
             <h1>{restaurant.name}</h1>
             <p>{`${restaurant.rating}/5`} <img src={star} alt="star" /></p>
-        </StyledHeader>
+            <StyledButton imgBackground={restaurant.bgImage}>Write to us</StyledButton>
+            </StyledHeader>
+            <main><p>{restaurant.description}</p></main>
+            </>
+        
         : null}
         {object === undefined ? <p>Cannot find restaurant</p> : null}
        </>
