@@ -30,6 +30,27 @@ const StyledHeader = styled.header`
     }
 `;
 
+const StyledMain = styled.main`
+    margin-top: 55px;
+    font-size: 32px;
+    position: relative;
+
+    p {
+        padding-left: 70px;
+        opacity: 0;
+        transform: translateY(-30px);
+        animation: appearing 1s forwards;
+        
+    }
+
+    @keyframes appearing {
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+
 const RestaurantDetails: React.FC<any> = (props) => {
     const {id} = useParams();
     //choosed restaurant object
@@ -57,7 +78,9 @@ const RestaurantDetails: React.FC<any> = (props) => {
             <p>{`${restaurant.rating}/5`} <img src={star} alt="star" /></p>
             <StyledButton imgBackground={restaurant.bgImage}>Write to us</StyledButton>
             </StyledHeader>
-            <main><p>{restaurant.description}</p></main>
+            <StyledMain>
+                <p>{restaurant.description}</p>
+            </StyledMain>
             </>
         
         : null}
