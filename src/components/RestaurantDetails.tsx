@@ -31,11 +31,19 @@ const StyledHeader = styled.header`
 `;
 
 const StyledMain = styled.main`
-    margin-top: 55px;
+    margin-top: 25px;
     font-size: 32px;
     position: relative;
 
     p {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .desc {
+        text-align: left;
+        font-weight: normal;
         padding-left: 70px;
         opacity: 0;
         transform: translateY(-30px);
@@ -79,7 +87,8 @@ const RestaurantDetails: React.FC<any> = (props) => {
             <StyledButton imgBackground={restaurant.bgImage}>Write to us</StyledButton>
             </StyledHeader>
             <StyledMain>
-                <p>{restaurant.description}</p>
+                <p>{restaurant.type}</p>
+                <p className="desc">{restaurant.description}</p>
             </StyledMain>
             </>
         
