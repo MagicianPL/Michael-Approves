@@ -39,9 +39,11 @@ const StyledMain = styled.main`
         text-align: center;
         font-weight: bold;
         margin-bottom: 40px;
+        color: ${({theme}) => theme.colors.tertiary};
     }
 
     .desc {
+        color: ${({theme}) => theme.colors.primary};
         text-align: left;
         font-weight: normal;
         padding-left: 70px;
