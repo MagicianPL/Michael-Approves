@@ -7,7 +7,7 @@ import StyledMainWrapper from './components/StyledMainWrapper';
 import RestaurantsGrid from './components/RestaurantsGrid';
 import RestaurantsProvider from './contexts/RestaurantsContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import RestaurantDetails from './components/RestaurantDetails';
+import RestaurantDetails from './components/RestaurantDetails/RestaurantDetails';
 
 function App() {
   return (
