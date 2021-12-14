@@ -4,6 +4,7 @@ const StyledMain = styled.main`
     margin-top: 25px;
     font-size: 32px;
     position: relative;
+    margin-bottom: 40px;
 
     p {
         text-align: center;

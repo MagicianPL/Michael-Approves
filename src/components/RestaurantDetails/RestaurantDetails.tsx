@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { RestaurantsContext } from '../../contexts/RestaurantsContext';
 import StyledHeader from './StyledHeader';
 import StyledMain from './StyledMain';
+import StyledFooter from './StyledFooter';
 import star from '../..//assets/star.png';
 import StyledButton from '../StyledButton';
 import Photos from './Photos';
@@ -41,6 +42,9 @@ const RestaurantDetails: React.FC<any> = (props) => {
                 <p className="desc">{restaurant.description}</p>
                <Photos photos={restaurant.images.urls} />
             </StyledMain>
+            <StyledFooter>
+                <StyledButton marginZero>HOME</StyledButton>
+            </StyledFooter>
             </>
         : null}
     </>
