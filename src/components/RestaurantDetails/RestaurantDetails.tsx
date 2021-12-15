@@ -7,7 +7,7 @@ import StyledFooter from './StyledFooter';
 import star from '../..//assets/star.png';
 import StyledButton from '../StyledButton';
 import Photos from './Photos';
-import StyledAddress from './StyledAddress';
+import Address from './Address';
 
 const RestaurantDetails: React.FC<any> = (props) => {
     const {id} = useParams();
@@ -42,9 +42,7 @@ const RestaurantDetails: React.FC<any> = (props) => {
                 <p>{restaurant.type}</p>
                 <p className="desc">{restaurant.description}</p>
                <Photos photos={restaurant.images.urls} />
-               <StyledAddress>
-                   <p>{restaurant.contact.address}</p>
-               </StyledAddress>
+               <Address contact={restaurant.contact} />
             </StyledMain>
             <StyledFooter>
                 <StyledButton as="a" href="/" marginZero>HOME</StyledButton>
