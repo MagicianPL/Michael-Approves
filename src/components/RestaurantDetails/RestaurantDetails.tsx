@@ -35,7 +35,7 @@ const RestaurantDetails: React.FC<any> = (props) => {
             <StyledHeader>
             <h1>{restaurant.name}</h1>
             <p>{`${restaurant.rating}/5`} <img src={star} alt="star" /></p>
-            <StyledButton imgBackground={restaurant.bgImage}>Write to us</StyledButton>
+            <StyledButton as="a" href={`mailto: ${restaurant.contact.email}`} imgBackground={restaurant.bgImage}>Write to us</StyledButton>
             </StyledHeader>
             <StyledMain>
                 <p>{restaurant.type}</p>
@@ -43,7 +43,7 @@ const RestaurantDetails: React.FC<any> = (props) => {
                <Photos photos={restaurant.images.urls} />
             </StyledMain>
             <StyledFooter>
-                <StyledButton marginZero>HOME</StyledButton>
+                <StyledButton as="a" href="/" marginZero>HOME</StyledButton>
             </StyledFooter>
             </>
         : null}

@@ -23,6 +23,10 @@ const StyledHeader = styled.header`
     img {
         width: 55px;
     }
+
+    a {
+        text-decoration: none;
+    }
 `;
 
 export default StyledHeader;

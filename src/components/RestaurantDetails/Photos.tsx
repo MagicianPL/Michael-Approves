@@ -51,8 +51,8 @@ const Photos: React.FC<Props> = ({photos}) => {
     return(
         <StyledWrapper>
             {photos.map((photo: string) => 
-            <StyledImageContainer>
-                <img key={photo} src={photo} alt="meal" />
+            <StyledImageContainer key={photo}>
+                <img src={photo} alt="meal" />
             </StyledImageContainer>)}
         </StyledWrapper>
     );
