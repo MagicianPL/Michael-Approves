@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { FaPhoneAlt, FaAt, FaHome } from 'react-icons/fa';
 
@@ -24,8 +24,10 @@ const StyledWrapper = styled.section`
 
 const Address: React.FC<any> = ({contact: {address, email, phone}}) => {
 
+    const wrapper = useRef(null);
+
     return(
-        <StyledWrapper>
+        <StyledWrapper ref={wrapper}>
             <h1>FIND US</h1>
             <p><FaPhoneAlt /> {phone}</p>
             <p><FaAt /> {email}</p>
