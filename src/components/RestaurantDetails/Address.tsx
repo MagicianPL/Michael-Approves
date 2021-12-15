@@ -1,15 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FaPhoneAlt, FaAt, FaHome } from 'react-icons/fa';
 
 const StyledWrapper = styled.section`
     width: 100%;
-    min-height: 300px;
-    border: 1px solid red;
     margin-top: 30px;
+
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: ${({theme}) => theme.colors.tertiary};
+    }
 
     p {
         color: ${({theme}) => theme.colors.primary};
         margin: 15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
     }
 `;
 
@@ -17,9 +26,10 @@ const Address: React.FC<any> = ({contact: {address, email, phone}}) => {
 
     return(
         <StyledWrapper>
-            <p>{phone}</p>
-            <p>{email}</p>
-            <p>{address}</p>
+            <h1>FIND US</h1>
+            <p><FaPhoneAlt /> {phone}</p>
+            <p><FaAt /> {email}</p>
+            <p><FaHome /> {address}</p>
         </StyledWrapper>
     );
 };
