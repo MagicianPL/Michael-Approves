@@ -19,6 +19,22 @@ const StyledWrapper = styled.section`
         justify-content: center;
         align-items: center;
         gap: 25px;
+
+        @media (max-width: 497px) {
+            justify-content: start;
+            text-align: left;
+        }
+
+        @media (max-width: 430px) {
+            font-size: 25px;
+        }
+
+        @media (max-width: 350px) {
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
     }
 `;
 

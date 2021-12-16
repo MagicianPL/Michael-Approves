@@ -20,6 +20,7 @@ const StyledHeader = styled.header`
         font-weight: bold;
         padding-left: 100px;
         margin-right: 80px;
+        text-align: center;
 
         @media (max-width: 1250px) {
             margin: 0;
