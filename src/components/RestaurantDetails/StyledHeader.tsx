@@ -6,11 +6,34 @@ const StyledHeader = styled.header`
     align-items: center;
     color: ${({theme}) => theme.colors.primary};
 
+    @media (max-width: 1250px) {
+        justify-content: space-around;
+    }
+
+    @media (max-width: 830px) {
+        flex-direction: column;
+        gap: 25px;
+    }
+
     h1 {
         font-size: 60px;
         font-weight: bold;
         padding-left: 100px;
         margin-right: 80px;
+
+        @media (max-width: 1250px) {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 390px) {
+            font-size: 55px;
+        }
+
+        @media (max-width: 340px) {
+            font-size: 50px;
+            text-align: center;
+        }
     }
 
     p {
@@ -26,6 +49,10 @@ const StyledHeader = styled.header`
 
     a {
         text-decoration: none;
+
+        @media (max-width: 1250px) {
+            margin: 0;
+        }
     }
 `;
 

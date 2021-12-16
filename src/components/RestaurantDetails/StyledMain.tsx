@@ -22,6 +22,10 @@ const StyledMain = styled.main`
         transform: translateY(-30px);
         animation: appearing 1s forwards;
         
+        @media (max-width: 1250px) {
+            padding-left: 0;
+            text-align: center;
+        }
     }
 
     @keyframes appearing {
