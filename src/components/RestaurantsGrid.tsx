@@ -34,6 +34,10 @@ const StyledRestaurantsGrid = styled.div`
         animation: loading 4s infinite;
         overflow: hidden;
         color: ${({theme}) => theme.colors.primary};
+
+        @media (max-width: 350px) {
+            font-size: 36px;
+        }
     }
 
     @keyframes loading {

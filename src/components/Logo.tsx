@@ -5,11 +5,16 @@ import logo from '../assets/logo.png';
 const Wrapper = styled.div`
         width: 130px;
         height: 130px;
+        position: relative;
+        bottom: 5px;
+        right: 16px;
+
+        @media (max-width: 750px) {
+            position: static;
+        }
 
         img {
-            position: relative;
-            bottom: 5px;
-            right: 16px;
+            width: 100%;
             opacity: 0;
             display: block;
             transform: scale(1.3);

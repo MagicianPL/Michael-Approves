@@ -4,12 +4,18 @@ import Logo from './Logo';
 
 const StyledHeader = styled.header`
     width: 100%;
-    height: 150px;
+    min-height: 150px;
     display: flex;
     align-items: center;
     padding: 10px 30px;
     position: relative;
     font-weight: bold;
+
+    @media (max-width: 750px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 
     &::after {
         content: "";
@@ -31,7 +37,17 @@ const StyledHeader = styled.header`
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        @media (max-width: 900px) {
+            font-size: 33px;
+        }
+
+        @media (max-width: 750px) {
+            position: static;
+            transform: none;
+        }
     }
     
 `;

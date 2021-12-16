@@ -17,6 +17,14 @@ const Wrapper = styled.section`
         border-radius: 4px;
         color: ${({theme}) => theme.colors.primary};
 
+        @media (max-width: 350px) {
+            font-size: 25px;
+        }
+
+        @media (max-width: 300px) {
+            font-size: 20px;
+        }
+
         &:focus {
             border: 2px solid ${({theme}) => theme.colors.primary};
         }
