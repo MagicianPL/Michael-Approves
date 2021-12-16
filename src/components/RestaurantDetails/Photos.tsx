@@ -5,6 +5,8 @@ const StyledWrapper = styled.div`
     width: 100%;
     min-height: 300px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-around;
     align-items: center;
     transform: translateY(40px);
@@ -13,6 +15,11 @@ const StyledWrapper = styled.div`
     background: ${({theme}) => theme.colors.tertiary};
     border-radius: 8px;
     padding: 20px;
+
+    @media (max-width: 1299px) {
+        justify-content: center;
+        gap: 25px;
+    }
 
     @keyframes appearing {
         100% {
@@ -28,7 +35,32 @@ const StyledImageContainer = styled.div`
     overflow: hidden;
     transition: all 0.7s;
 
-        &:hover {
+    @media (max-width: 1299px) {
+        max-width: 490px;
+    }
+
+    @media (max-width: 1084px) {
+        max-width: 80%;
+        height: 465px;
+    }
+
+    @media (max-width: 800px) {
+        height: 360px;
+    }
+
+    @media (max-width: 660px) {
+        max-width: 95%;
+    }
+
+    @media (max-width: 500px) {
+        height: 250px;
+    }
+
+    @media (max-width: 380px) {
+        height: 187px;
+    }
+
+    &:hover {
             transform: scale(1.2);
         }
 
