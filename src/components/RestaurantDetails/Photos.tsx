@@ -79,7 +79,6 @@ interface Props {
 }
 
 const Photos: React.FC<Props> = ({photos}) => {
-    console.log(photos);
     return(
         <StyledWrapper>
             {photos.map((photo: string) => 

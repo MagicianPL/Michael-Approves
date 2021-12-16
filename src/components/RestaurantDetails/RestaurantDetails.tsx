@@ -24,10 +24,9 @@ const RestaurantDetails: React.FC<any> = (props) => {
         }
     }, [restaurants, id]);
 
-
-    useEffect(()=>{
-        console.log(restaurant);
-    }, [restaurant])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
    return (
     <>
