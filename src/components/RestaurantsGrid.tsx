@@ -10,6 +10,21 @@ const StyledRestaurantsGrid = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     justify-items: center;
+    gap: 30px;
+    overflow-x: hidden;
+
+    @media (max-width: 926px) {
+        gap: 0;
+    }
+
+    @media (max-width: 880px) {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 30px;
+    }
+
+    @media (max-width: 530px) {
+        grid-template-columns: 1fr;
+    }
 
     .loading {
         max-width: 100%;
