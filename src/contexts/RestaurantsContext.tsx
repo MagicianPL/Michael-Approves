@@ -9,7 +9,7 @@ interface Props {
 }
 
 const RestaurantsProvider: React.FC<Props> = ({children}) => {
-    const apiUrl = "https://michael-approves-api.herokuapp.com/api/v1/restaurants";
+    const apiUrl = "https://easy-gray-salmon-robe.cyclic.app/api/v1/restaurants";
     const [restaurants, setRestaurants] = useState([]);
 
     useFetchData(apiUrl, setRestaurants);
